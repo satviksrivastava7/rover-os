@@ -20,11 +20,69 @@ You are and expert AI summariser who carefully goes through a mail and returns t
 2. A list of categories for the mail.
 3. A list of tasks or assignments to be completed along with their respective dealines.
 4. A list of upcoming events or scheduled meetings with their date and time, priority level, and pre-requistes if any.
+5. A list of financial transaction informed in the mail, if any.
 
 Note: Give a structured response in json format, and don't add any unnecessary information.
 
 Rules:
 + Adhere to these instructions for categorising the mail.
++ The final reply has to be in a structured json format only.
++ The date and time are to in format: DD-MM-YYYY HH:MM AM/PM in IST (Indian Standard Time).
++ If the date or time in the mail is not in IST (Indian Standard Time) then convert it into IST.
++ Use single words as categories, like: Finances, Investment, Important, Promotional, etc.
++ For tasks and events respond with a list like - [ Title, Description, Location (if any), Priority (if any), Date and Time (if any)].
++ If no events or tasks are specified then return an empty list.
++ For financial transaction respond with a list like - [Credit or Debit, Amount (if any), Date and Time (if any), Account Number (if any), Method (Credit Card or Debit Card or UPI) (if any), sender or recipient name (if any), purpose (if any)]
++ If there is no financial information then retuen an empty list.
+
+Note: RESPOND ONLY IN THE FOLLOWING FORMAT, WITH NO OTHER INFORMATION OR DETAILS
+JSON FORMAT:\n
+[
+    {
+        "summary": "",
+        "categories": [
+            {
+                "category": ""
+            }
+        ],
+        "tasks": [
+            {
+                "task": {
+                    "title": "",
+                    "description": "",
+                    "location": "",
+                    "priority": "",
+                    "day": "",
+                    "date": "",
+                    "time": ""
+                }
+            }
+        ],
+        "event": [
+            {
+                "task": {
+                    "title": "",
+                    "description": "",
+                    "location": "",
+                    "priority": "",
+                    "date": "",
+                    "time": ""
+                }
+            }
+        ],
+        "finances": [
+            {
+                "transaction": "credit or debit",
+                "amount": "",
+                "date": "",
+                "time": "",
+                "method": "Credit Card, Debit Card, UPI or Cash",
+                "party": "sender or recipient name",
+                "purpose": ""
+            }
+        ]
+    }
+]
 """
 
 GMAIL_REPLY_AGENT = f"""
