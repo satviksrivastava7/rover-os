@@ -6,3 +6,5 @@ google-generativeai
 pyautogui
 pydantic
 python-dotenv
+google-genai
+pyperclip
