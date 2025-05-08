@@ -293,14 +293,14 @@ def bulk_edit(directory, pattern, edit_func):
 
 
 if __name__ == "__main__":
-    test_dir = "os_operations_test_dir"
+    '''test_dir = "os_operations_test_dir"
     create_directory(test_dir)
     print("-" * 20)
 
     create_file(os.path.join(test_dir, "file1.txt"), "This is file 1.")
     create_file(os.path.join(test_dir, "file2.log"), "Log entry one.\nLog entry two.")
-    create_file(os.path.join(test_dir, "another_file.txt")) # Empty file
-    create_file(os.path.join(test_dir, "file1.txt"), "Attempting to create file1.txt again.") # Should show error
+    create_file(os.path.join(test_dir, "another_file.txt")) 
+    create_file(os.path.join(test_dir, "file1.txt"), "Attempting to create file1.txt again.")
 
     create_directory(os.path.join(test_dir, "subdir"))
     create_file(os.path.join(test_dir, "subdir", "nested_file.txt"), "Inside subdir.")
@@ -311,13 +311,13 @@ if __name__ == "__main__":
     if content1 is not None:
         print(f"Content of file1.txt:\n{content1}")
 
-    content_non_existent = read_file_content(os.path.join(test_dir, "non_existent.txt")) # Should show error
+    content_non_existent = read_file_content(os.path.join(test_dir, "non_existent.txt"))
 
     print("-" * 20)
 
     update_file_content(os.path.join(test_dir, "another_file.txt"), "New content for empty file.")
     update_file_content(os.path.join(test_dir, "file2.log"), "Appending new log.\n", mode='a')
-    update_file_content(os.path.join(test_dir, "non_existent_update.txt"), "This should create a new file.") # Should create
+    update_file_content(os.path.join(test_dir, "non_existent_update.txt"), "This should create a new file.")
 
     print("-" * 20)
 
@@ -328,7 +328,7 @@ if __name__ == "__main__":
     print("-" * 20)
 
     rename_item(os.path.join(test_dir, "another_file.txt"), os.path.join(test_dir, "renamed_file.txt"))
-    rename_item(os.path.join(test_dir, "subdir"), os.path.join(test_dir, "renamed_subdir")) # Rename directory
+    rename_item(os.path.join(test_dir, "subdir"), os.path.join(test_dir, "renamed_subdir"))
 
     print("-" * 20)
 
@@ -356,4 +356,4 @@ if __name__ == "__main__":
     if not os.path.exists(test_dir):
         print(f"Successfully deleted {test_dir}")
     else:
-        print(f"Failed to delete {test_dir}")
+        print(f"Failed to delete {test_dir}")'''
